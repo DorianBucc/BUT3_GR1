@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href="/_00_ASBank2023/style/style.css" />
+<link rel="stylesheet" href="/BUT3_GR1/style/style.css" />
 
 <title>Détail du Compte <s:property value="compte" /></title>
 </head>

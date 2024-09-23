@@ -7,7 +7,7 @@
 <head>
 <title>Résultat de la suppression</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href="/_00_ASBank2023/style/style.css" />
+<link rel="stylesheet" href="/BUT3_GR1/style/style.css" />
 </head>
 <body>
 
