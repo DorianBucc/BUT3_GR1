@@ -1,5 +1,9 @@
 package com.iut.banque.modele;
 
+import java.util.Base64;
+
+import javax.crypto.Cipher;
+import javax.crypto.spec.SecretKeySpec;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorType;
@@ -148,17 +152,59 @@ public abstract class Utilisateur {
 	/**
 	 * @return userPwd : le mot de passe de l'utilisateur
 	 */
-	public String getUserPwd() {
-		return userPwd;
-	}
+	private static final String ALGORITHM = "AES"; // Algorithme de chiffrement
+    private static final String KEY = "0123456789abcdef"; // Clé AES de 16 caractères (128 bits)
 
-	/**
-	 * @param userPwd
-	 *            : le mot de passe de l'utilisateur
-	 */
-	public void setUserPwd(String userPwd) {
-		this.userPwd = userPwd;
-	}
+    // Méthode pour obtenir le mot de passe déchiffré
+    public String getUserPwd() {
+        String decryptPwd = "";
+        try {
+            decryptPwd = Utilisateur.decrypt(userPwd); // Déchiffre le mot de passe
+            System.out.println("Mot de passe chiffré : " + userPwd); // Affiche le mot de passe chiffré<
+			System.out.println("Mot de passe dechiffré : " + decryptPwd); // Affiche le mot de passe chiffré<
+			// System.out.println("Mot de passe apres etre chiffré : " + Utilisateur.encrypt(userPwd)); // Affiche le mot de passe chiffré<
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+		return decryptPwd;
+        // return userPwd;
+    }
+
+    /**
+     * Méthode pour définir le mot de passe de l'utilisateur
+     *
+     * @param userPwd : le mot de passe de l'utilisateur
+     */
+    public void setUserPwd(String userPwd) {
+        try {
+            this.userPwd = Utilisateur.encrypt(userPwd); // Chiffre le mot de passe et le stocke
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Fonction pour chiffrer le mot de passe
+    public static String encrypt(String password) throws Exception {
+        SecretKeySpec keySpec = new SecretKeySpec(KEY.getBytes(), ALGORITHM); // Convertit la clé en bytes
+        Cipher cipher = Cipher.getInstance(ALGORITHM); // Initialisation du Cipher avec l'algorithme AES
+        cipher.init(Cipher.ENCRYPT_MODE, keySpec); // Mode chiffrement
+
+        byte[] encryptedBytes = cipher.doFinal(password.getBytes()); // Chiffre le mot de passe
+        return Base64.getEncoder().encodeToString(encryptedBytes); // Encode en base64 pour l'affichage
+    }
+
+    // Fonction pour déchiffrer le mot de passe
+    public static String decrypt(String encryptedPassword) throws Exception {
+        SecretKeySpec keySpec = new SecretKeySpec(KEY.getBytes(), ALGORITHM); // Recrée la clé
+        Cipher cipher = Cipher.getInstance(ALGORITHM);
+        cipher.init(Cipher.DECRYPT_MODE, keySpec); // Mode déchiffrement
+
+        byte[] decodedBytes = Base64.getDecoder().decode(encryptedPassword); // Décoder le base64
+        byte[] decryptedBytes = cipher.doFinal(decodedBytes); // Déchiffre le mot de passe
+        return new String(decryptedBytes); // Convertit en chaîne de caractères
+    }
+
+
 
 	/**
 	 * Constructeur de Utilisateur avec tous les champs de la classe comme

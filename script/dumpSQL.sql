@@ -69,9 +69,9 @@ CREATE TABLE IF NOT EXISTS `Utilisateur` (
 
 INSERT INTO `Utilisateur` (`userId`, `nom`, `prenom`, `adresse`, `userPwd`, `male`, `type`, `numClient`) VALUES
 ('a', 'a', 'a', 'a', 'a', b'1', 'MANAGER', NULL),
-('admin', 'Smith', 'Joe', '123, grande rue, Metz', 'adminpass', b'1', 'MANAGER', ''),
-('client1', 'client1', 'Jane', '45, grand boulevard, Brest', 'clientpass1', b'1', 'CLIENT', '123456789'),
-('client2', 'client2', 'Jane', '45, grand boulevard, Brest', 'clientpass2', b'1', 'CLIENT', '123456788');
+('admin', 'Smith', 'Joe', '123, grande rue, Metz', 'x6qwzeIdPh4XpdzlZ4JnmA==', b'1', 'MANAGER', ''),
+('client1', 'client1', 'Jane', '45, grand boulevard, Brest', 'OdVkowPYbho0DBL3QeEILg==', b'1', 'CLIENT', '123456789'),
+('client2', 'client2', 'Jane', '45, grand boulevard, Brest', 'N1b2sV+I7vXwQAz1ZL6vxA==', b'1', 'CLIENT', '123456788');
 
 --
 -- Constraints for dumped tables
