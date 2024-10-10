@@ -162,7 +162,7 @@ public abstract class Utilisateur {
             decryptPwd = Utilisateur.decrypt(userPwd); // Déchiffre le mot de passe
             System.out.println("Mot de passe chiffré : " + userPwd); // Affiche le mot de passe chiffré<
 			System.out.println("Mot de passe dechiffré : " + decryptPwd); // Affiche le mot de passe chiffré<
-			// System.out.println("Mot de passe apres etre chiffré : " + Utilisateur.encrypt(userPwd)); // Affiche le mot de passe chiffré<
+			System.out.println("Mot de passe apres etre chiffré : " + Utilisateur.encrypt(userPwd)); // Affiche le mot de passe chiffré<
         } catch (Exception e) {
             e.printStackTrace();
         }
