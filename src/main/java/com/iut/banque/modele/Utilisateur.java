@@ -227,7 +227,7 @@ public abstract class Utilisateur {
 		this.adresse = adresse;
 		this.male = male;
 		this.userId = userId;
-		this.userPwd = userPwd;
+		this.setUserPwd(userPwd);
 	}
 
 	/**
