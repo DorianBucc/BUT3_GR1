@@ -1,0 +1,6 @@
+com/iut/banque/test/modele/TestsClient.class
+com/iut/banque/test/facade/TestsBanqueManager.class
+com/iut/banque/test/modele/TestsCompteSansDecouvert.class
+com/iut/banque/test/modele/TestsCompte.class
+com/iut/banque/test/dao/TestsDaoHibernate.class
+com/iut/banque/test/modele/TestsCompteAvecDecouvert.class
