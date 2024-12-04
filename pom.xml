@@ -5,6 +5,7 @@
 	<groupId>com.iut.banque</groupId>
 	<artifactId>_00_ASBank2023</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<!-- <packaging>jar</packaging> -->
 	<packaging>war</packaging>
 	<name>_00_ASBank2023</name>
 

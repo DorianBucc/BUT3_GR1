@@ -1,5 +1,3 @@
-CREATE DATABASE IF NOT EXISTS bankiut;
-
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
@@ -16,10 +14,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Compte`
+-- Table structure for table `compte`
 --
 
-CREATE TABLE IF NOT EXISTS `Compte` (
+CREATE TABLE IF NOT EXISTS `compte` (
   `numeroCompte` varchar(50) NOT NULL,
   `userId` varchar(50) NOT NULL,
   `solde` double NOT NULL,
@@ -30,10 +28,10 @@ CREATE TABLE IF NOT EXISTS `Compte` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `Compte`
+-- Dumping data for table `compte`
 --
 
-INSERT INTO `Compte` (`numeroCompte`, `userId`, `solde`, `avecDecouvert`, `decouvertAutorise`) VALUES
+INSERT INTO `compte` (`numeroCompte`, `userId`, `solde`, `avecDecouvert`, `decouvertAutorise`) VALUES
 ('AB7328887341', 'client2', -97, 'AVEC', 123),
 ('BD4242424242', 'client1', 150, 'SANS', NULL),
 ('FF5050500202', 'client1', 705, 'SANS', NULL),
@@ -49,10 +47,10 @@ INSERT INTO `Compte` (`numeroCompte`, `userId`, `solde`, `avecDecouvert`, `decou
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Utilisateur`
+-- Table structure for table `utilisateur`
 --
 
-CREATE TABLE IF NOT EXISTS `Utilisateur` (
+CREATE TABLE IF NOT EXISTS `utilisateur` (
   `userId` varchar(50) NOT NULL,
   `nom` varchar(45) NOT NULL,
   `prenom` varchar(45) NOT NULL,
@@ -66,10 +64,10 @@ CREATE TABLE IF NOT EXISTS `Utilisateur` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `Utilisateur`
+-- Dumping data for table `utilisateur`
 --
 
-INSERT INTO `Utilisateur` (`userId`, `nom`, `prenom`, `adresse`, `userPwd`, `male`, `type`, `numClient`) VALUES
+INSERT INTO `utilisateur` (`userId`, `nom`, `prenom`, `adresse`, `userPwd`, `male`, `type`, `numClient`) VALUES
 ('a', 'a', 'a', 'a', 'a', b'1', 'MANAGER', NULL),
 ('admin', 'Smith', 'Joe', '123, grande rue, Metz', 'x6qwzeIdPh4XpdzlZ4JnmA==', b'1', 'MANAGER', ''),
 ('client1', 'client1', 'Jane', '45, grand boulevard, Brest', 'OdVkowPYbho0DBL3QeEILg==', b'1', 'CLIENT', '123456789'),
@@ -82,8 +80,8 @@ INSERT INTO `Utilisateur` (`userId`, `nom`, `prenom`, `adresse`, `userPwd`, `mal
 --
 -- Constraints for table `Compte`
 --
-ALTER TABLE `Compte`
-  ADD CONSTRAINT `fk_Compte_userId` FOREIGN KEY (`userId`) REFERENCES `Utilisateur` (`userId`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE `compte`
+  ADD CONSTRAINT `fk_Compte_userId` FOREIGN KEY (`userId`) REFERENCES `utilisateur` (`userId`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
