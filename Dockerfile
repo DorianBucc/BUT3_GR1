@@ -17,7 +17,7 @@ FROM tomcat:9.0-jdk11-openjdk-slim
 #COPY --from=build /app/target/*.war /usr/local/tomcat/webapps/
 COPY target/*.war /usr/local/tomcat/webapps/ROOT.war
 
-# car 8083 est pour le serveur de l'application
+# car 8083 est pour le serveur de l'application (note)
 EXPOSE 8083
 
 CMD ["catalina.sh", "run"]
