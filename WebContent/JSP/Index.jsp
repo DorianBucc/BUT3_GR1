@@ -9,8 +9,9 @@
 		alert('Ce TD a été donné pour les AS dans le cadre du cours de CO Avancé (Promotion 2017-2018)');
 	}
 </script>
-<link rel="stylesheet" href="/BUT3_GR1/style/style.css" />
-<link href="/BUT3_GR1/style/favicon.ico" rel="icon"
+<%--Résolution du bug non bloquant Nr_3 - liaison correct du css--%>
+<link rel="stylesheet" href="../style/style.css" />
+<link href="../style/faviconUL.ico" rel="icon"
       type="image/x-icon" />
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -19,8 +20,9 @@
 <body>
 	<h1>Bienvenue sur l'application IUT Bank 2023</h1>
 	<p>
+		<%--Résolution du bug non bloquant Nr_2 - Image page d'accueil--%>
 		<img
-			src="https://www.iut-metz.univ-lorraine.fr/images/AdminSite/Logos/Logo_IUT_Metz.UL.small.png"
+			src="https://formations.univ-lorraine.fr/img/su/45.jpg"
 			alt="logo" />
 	</p>
 	<input type="button" value="Information" name="info"

@@ -48,7 +48,7 @@
 
 		<property name="url" value="jdbc:mysql://localhost:3306/bankiut?useSSL=false" />
 			<property name="username" value="root" />
-			<property name="password"  value="root" />
+			<property name="password"  value="" />
 	</bean>
 
 	<!-- ============= Gestion des Transactions ============= -->
