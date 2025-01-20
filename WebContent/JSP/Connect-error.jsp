@@ -6,7 +6,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Erreur de Connexion</title>
-<link rel="stylesheet" href="/ASBank203/style/style.css" />
+	<%--Résolution du bug non bloquant Nr_3 -liaison correct du css--%>
+	<link rel="stylesheet" href="../style/style.css" />
 </head>
 <body>
 	<p><b>Erreur de connection !</b> Vous avez probablement entré de mauvais identifiants</p>
